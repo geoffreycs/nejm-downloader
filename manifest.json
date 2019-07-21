@@ -1,13 +1,20 @@
-  {
-    "name": "NEJM Video Downloader",
-    "version": "0.2",
+{
+    "browser_action": {
+        "default_icon": {
+            "512": "favicon.png"
+        },
+        "default_title": "Video Link Finder for NEJM",
+        "default_popup": "popup.html"
+    },
     "description": "Prototype extension to download videos from NEJM.",
-    "permissions": ["activeTab", "downloads"],
-	"icons": {"512": "favicon.png"},
-	"browser_action": {
-		"default_icon": "favicon.png",
-		"default_title": "NEJM Video Link Finder",
-		"default_popup": "popup.html"
-	},
-	"manifest_version": 2
-  }
+    "icons": {
+        "512": "favicon.png"
+    },
+    "manifest_version": 2,
+    "name": "Video Downloader for NEJM",
+    "permissions": [
+        "activeTab",
+        "downloads"
+    ],
+    "version": "0.3"
+}

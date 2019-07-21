@@ -12,7 +12,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         var videoURL = response;
 		var displayOut;
 		if (videoURL == "null") {
-			displayOut = "No video URL was found on this page. This doesn't mean that there isn't one, just that the extension was not able to scrape a link off of the page."
+			displayOut = "No video URL was found on this page. This doesn't mean that there isn't one, just that the extension was not able to scrape a link off of the page. This extension only works on NEJM pages."
 		} else {
 			displayOut = "<a id='link' target='_blank' href='" + videoURL + "'>" + videoURL + "</a><br/><br/><button id='trigger' type='button'>Download file</button><br/><br/><video src='" + videoURL + "' controls>Video.</video>"
 		}
@@ -26,6 +26,9 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 }
 
 window.addEventListener('load', (event) => {
-  chrome.tabs.executeScript(null, {file: 'content.js'}, comURL()
-  );
+	try {
+		chrome.tabs.executeScript(null, {file: 'content.js'}, comURL());
+	} catch(e) {
+		document.getElementById("out").innerHTML = "Unable to inject the script. This extension only works on NEJM pages."
+	}
 });
