@@ -3,7 +3,7 @@
         "default_icon": {
             "512": "favicon.png"
         },
-        "default_title": "Video Link Finder for NEJM",
+        "default_title": "Video Downloader for NEJM",
         "default_popup": "popup.html"
     },
     "description": "Prototype extension to download videos from NEJM.",
@@ -16,5 +16,5 @@
         "activeTab",
         "downloads"
     ],
-    "version": "0.3"
+    "version": "0.4"
 }
